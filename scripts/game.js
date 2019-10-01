@@ -1,14 +1,46 @@
 const game = document.querySelector(`[data-gameTitle]`);
+const barForm = document.createElement('form')
+const barInput = document.createElement('input');
+const barButton = document.createElement('button')
 
-function searchBar() {
-    const barForm = document.createElement('form')
-    const barInput = document.createElement('input');
-    barForm.append(barInput);
-    game.append(barForm);
-    $('input').attr("id", "input")
-    $('#input').attr("placeholder", "Find a Game!");
-    $('#input').attr("type", "text");
-}
+
+barForm.append(barInput);
+barForm.append(barButton)
+game.append(barForm);
+
+barButton.innerHTML = 'Search'
+
+$('form').attr("id", "#form")
+
+$('input').attr("id", "input")
+$('#input').attr("placeholder", "Find a Game!");
+$('#input').attr("type", "text");
+
+$('button').attr("id", "button")
+$('#button').attr("type", "submit")
+$('#button').attr("class", "btn btn-primary")
+
+
+
+
+
+
+
+barForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const usrGame = barForm.querySelector('#input').value;
+    if (usrGame.length <= 0) {
+        alert('Please enter a Game Title')
+    } else {
+        if (game.childElementCount >= 0) {
+            while (game.childElementCount > 1) {
+                game.removeChild(game.lastChild)
+            }
+        }
+        update(usrGame);
+    }
+});
+
 
 function getTitle(object) {
     object.then(info => {
@@ -59,36 +91,31 @@ function getImage(title) {
             const gameImage2 = info.background_image_additional
             gameImages.push(gameImage2)
         }
+
         const imageInfo = document.createElement('img')
-
-
-        var x = 0
+        let x = 0
         imageInfo.src = gameImages[x]
-        console.log(gameImages)
-
 
         function changeImage() {
             if (x == 1) {
                 x = changeImage.length
+
             } else if (x <= 0) {
                 x += 1;
             }
             imageInfo.src = gameImages[x]
         }
         setInterval(changeImage, 4000)
-
         game.append(imageInfo)
     })
 }
 
 
-function update() {
-    // const gameGet = get('https://api.rawg.io/api/games?page_size=5&searcxh=Cancy Crush')
-    const gameGet = get('https://api.rawg.io/api/games?page_size=5&search=Call of Duty')
-        // const gameGet = get('https://api.rawg.io/api/games?page_size=5&search=final%20fantasy%20VII')
-    searchBar()
-    getTitle(gameGet)
-    getPlatforms(gameGet)
+function update(title = 'Kingdom Hearts 2') {
+    const gameGet = get(`https://api.rawg.io/api/games?page_size=5&search=${title}`);
+
+    getTitle(gameGet);
+    getPlatforms(gameGet);
 }
 
 
