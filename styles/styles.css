@@ -18,14 +18,18 @@ html, body {
 .btn-size{
     width: 13%;
     height: 8%;
-    font-size: 15px; 
-    min-width: 90px;
+    font-size: 20px; 
+    min-width: 110px;
     min-height: 40px;
     display: flex;
     flex-direction: column;
     margin: 20px;
     align-items: center;
 }  
+.fontSize {
+    display: flex;
+    justify-content: center
+}
 
 .footer {
     right: 0;
@@ -44,4 +48,9 @@ html, body {
 .student {
     height: 20%;
     width: 20%;
+}
+
+body, a:hover
+{
+    cursor: url(http://cur.cursors-4u.net/mechanics/mec-5/mec443.cur), progress !important;
 }

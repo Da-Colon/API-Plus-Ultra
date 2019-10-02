@@ -17,3 +17,10 @@ html {
   align-items: center;
   justify-content: center;
 }
+
+
+body, a:hover
+{
+  cursor: url(http://cur.cursors-4u.net/anime/ani-2/ani254.ani), url(http://cur.cursors-4u.net/anime/ani-2/ani254.png), progress !important;
+}
+
