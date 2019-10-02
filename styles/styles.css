@@ -1,0 +1,40 @@
+html, body {
+    background-color: rgb(6,6,6);
+    height: 100%;
+}
+
+.wrapper {
+    background: url(../img/mainPage.png);
+    background-position: top;
+    background-repeat:no-repeat;
+    background-size: contain;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.btn-size{
+
+    width: 15%;
+    height: 10%; 
+
+}  
+
+
+
+
+
+
+.footer {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+}
