@@ -204,13 +204,13 @@ footer.append(footerDiv);
 $(footerDiv).attr("class", "about")
 const img1 = document.createElement('img')
 $(img1).attr("src", "img/david.jpeg")
-$(img1).attr("class", "student")
+$(img1).attr("class", "student rounded-circle")
 const img2 = document.createElement('img')
 $(img2).attr("src", "img/kyra.jpeg")
-$(img1).attr("class", "student")
+$(img2).attr("class", "student rounded-circle")
 const img3 = document.createElement('img')
 $(img3).attr("src", "img/gil.jpeg")
-$(img1).attr("class", "student")
+$(img3).attr("class", "student rounded-circle")
 footerDiv.append(img1, img2, img3)
 
 
