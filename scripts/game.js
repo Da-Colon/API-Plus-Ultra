@@ -1,25 +1,81 @@
 const game = document.querySelector(`[data-gameTitle]`);
+
+// Nav Bar
+const navBar = document.createElement('nav')
+const navDiv = document.createElement('div')
+const navButton = document.createElement('button')
+const buttonSpan = document.createElement('span')
+const navLinkDiv = document.createElement('div')
+const navLinkUL = document.createElement('ul')
+const navLinkLI1 = document.createElement('li')
+const navLinkLI2 = document.createElement('li')
+const navLinkLI3 = document.createElement('li')
+const navLinkAnchor1 = document.createElement('a')
+const navLinkAnchor2 = document.createElement('a')
+const navLinkAnchor3 = document.createElement('a')
+
+
+game.append(navBar);
+navBar.append(navDiv);
+$('nav').attr("class", "navbar navbar-expand-lg navbar-dark bg-dark fixed-top ")
+$(navDiv).attr("class", "container")
+
+
+navDiv.append(navButton);
+$(navButton).attr("class", "navbar-toggler");
+$(navButton).attr("type", "button");
+$(navButton).attr("data-toggle", "collapse");
+$(navButton).attr("data-target", "#navbarResponsive");
+$(navButton).attr("aria-controls", "#navbarResponsive");
+$(navButton).attr("aria-expanded", "false");
+$(navButton).attr("aria-label", "Toggle navigation");
+navButton.append(buttonSpan)
+$(buttonSpan).attr("class", "navbar-toggler-icon");
+
+navDiv.append(navLinkDiv);
+$(navLinkDiv).attr("class", "collapse navbar-collapse");
+$(navLinkDiv).attr("id", "navbarResponsive");
+navLinkDiv.append(navLinkUL);
+$(navLinkUL).attr("class", "navbar-nav ml-auto");
+
+navLinkUL.append(navLinkLI1);
+$(navLinkLI1).attr("class", "nav-item");
+navLinkLI1.append(navLinkAnchor1);
+$(navLinkAnchor1).attr("class", "nav-link");
+$(navLinkAnchor1).attr("href", "#");
+navLinkAnchor1.innerHTML = "Home"
+
+navLinkUL.append(navLinkLI2);
+$(navLinkLI2).attr("class", "nav-item");
+navLinkLI2.append(navLinkAnchor2);
+$(navLinkAnchor2).attr("class", "nav-link");
+$(navLinkAnchor2).attr("href", "#");
+navLinkAnchor2.innerHTML = "Anime"
+
+navLinkUL.append(navLinkLI3);
+$(navLinkLI3).attr("class", "nav-item");
+navLinkLI3.append(navLinkAnchor3);
+$(navLinkAnchor3).attr("class", "nav-link");
+$(navLinkAnchor3).attr("href", "#");
+navLinkAnchor3.innerHTML = "About"
+
+// Search Bar
 const barForm = document.createElement('form')
-const barInput = document.createElement('input');
+const barInput = document.createElement('input')
 const barButton = document.createElement('button')
-
-
 barForm.append(barInput);
-barForm.append(barButton)
+barForm.append(barButton);
 game.append(barForm);
-
 barButton.innerHTML = 'Search'
 
 
-$('form').attr("id", "#form")
-
-$('input').attr("id", "input")
+$('form').attr("id", "#form");
+$('input').attr("id", "input");
 $('#input').attr("placeholder", "Find a Game!");
 $('#input').attr("type", "text");
-
-$('button').attr("id", "button")
-$('#button').attr("type", "submit")
-$('#button').attr("class", "btn btn-primary")
+$('button').attr("id", "button");
+$(barButton).attr("type", "submit");
+$(barButton).attr("class", "btn btn-primary")
 
 barForm.addEventListener("submit", function(event) {
     event.preventDefault();
