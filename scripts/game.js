@@ -10,6 +10,7 @@ game.append(barForm);
 
 barButton.innerHTML = 'Search'
 
+
 $('form').attr("id", "#form")
 
 $('input').attr("id", "input")
@@ -19,12 +20,6 @@ $('#input').attr("type", "text");
 $('button').attr("id", "button")
 $('#button').attr("type", "submit")
 $('#button').attr("class", "btn btn-primary")
-
-
-
-
-
-
 
 barForm.addEventListener("submit", function(event) {
     event.preventDefault();
@@ -113,7 +108,6 @@ function getImage(title) {
 
 function update(title = 'Kingdom Hearts 2') {
     const gameGet = get(`https://api.rawg.io/api/games?page_size=5&search=${title}`);
-
     getTitle(gameGet);
     getPlatforms(gameGet);
 }
