@@ -15,9 +15,6 @@ function strawHats() {
             const home = rubber.homepage
             const overview = rubber.overview
             const dubs = rubber.original_language
-            
-            console.log(dubs)
-            //canvas
 
             //Setting pointers to HTML IDs as variables
             const icon = document.getElementById('icon1');
@@ -25,7 +22,7 @@ function strawHats() {
             const title = document.getElementById('title1');
             const website = document.getElementById('website1');
             const desk = document.getElementById('description1');
-            const lang = document.getElementById('lang');
+            const lang = document.getElementById('lang1');
             const canvas = document.getElementById('canvas1')
             
             //Using paring both variables to populate in webpage 
