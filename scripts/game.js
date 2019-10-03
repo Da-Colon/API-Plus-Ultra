@@ -63,9 +63,7 @@ navLinkAnchor3.innerHTML = "About"
 // Title
 const pageTitle = document.createElement('h1')
 pageTitle.innerHTML = 'Find Information About Your Favorite Game!'
-
 $(pageTitle).attr("class", "title-h1");
-
 game.append(pageTitle);
 
 // Search Bar
@@ -90,7 +88,6 @@ $(barButton).attr("type", "submit");
 $(barButton).attr("class", "nes-btn search-btn")
 
 
-
 //  Main Content
 const main = document.createElement('main')
 game.append(main);
@@ -103,7 +100,6 @@ barForm.addEventListener("submit", function(event) {
     if (usrGame.length <= 0) {
         alert('Please enter a Game Title')
     } else {
-
         if (main.childElementCount >= 0) {
 
             while (main.childElementCount > 0) {
@@ -114,12 +110,6 @@ barForm.addEventListener("submit", function(event) {
 
     }
 });
-
-//  Main Content
-const main = document.createElement('main')
-game.append(main)
-$(main).attr("class", "main-ctn")
-
 
 
 
@@ -136,28 +126,41 @@ function getTitle(object) {
         $(titleInfo).attr("class", "title-game");
         titleInfo.innerHTML = gameName
         main.append(titleInfo);
+        getDescription(gameName)
 
-        getDescription(gameName);
 
     });
 }
 
 function getPlatforms(object) {
 
+    // Use the then method to make a promise, arrow function with a info arguement pass in.
     object.then(info => {
+
+        // Find the Results
         const gamePlatform = info.results[0].platforms;
+
+        // Create div, ul and h4 element
         const platformCtn = document.createElement('div');
-        $(platformCtn).attr("class", "platform-ctn");
         const platformTitle = document.createElement('h4');
-        platformTitle.innerHTML = 'This game is Available on These Consoles'
         const platformInfo = document.createElement('ul');
+
+        // make a call to the div add a attribute (class) 
+        $(platformCtn).attr("class", "platform-ctn");
+
+        // Add a string between the opening and closing tags on the H4 element
+        platformTitle.innerHTML = 'This game is Available on These Consoles';
+
+        // append the created H4 and UL element 
         platformCtn.append(platformTitle);
         platformCtn.append(platformInfo);
-        main.append(platformCtn)
+        main.append(platformCtn);
+
+        // foreach 'platform' in the array in the API create a LI and write the data in the LI and attach to UL
         gamePlatform.forEach(gameConsole => {
             const eachPlatform = document.createElement('li');
-            platformInfo.append(eachPlatform);
             eachPlatform.innerHTML = gameConsole.platform.name;
+            platformInfo.append(eachPlatform);
 
         });
     });
@@ -168,12 +171,15 @@ function getDescription(title) {
     const getDescription = get(`https://api.rawg.io/api/games/${title}`)
     getDescription.then(info => {
         const gameDescription = info.description
-        const gameInfo = document.createElement('p')
+        const descriptionDiv = document.createElement('div');
+        $(descriptionDiv).attr("class", "description-ctn")
+        const gameInfo = document.createElement('p');
         gameInfo.innerHTML = gameDescription;
-        game.append(gameInfo);
-        getImage(title)
+        descriptionDiv.append(gameInfo);
+        main.append(descriptionDiv);
     });
-
+    console.log(title)
+    getImage(title)
 }
 
 function getImage(title) {
@@ -187,9 +193,16 @@ function getImage(title) {
             gameImages.push(gameImage2)
         }
 
-        const imageInfo = document.createElement('img')
+        const imageDiv = document.createElement('div');
+        $(imageDiv).attr("class", "image-ctn");
+        main.append(imageDiv)
+        const imageInfo = document.createElement('img');
+        $(imageInfo).attr("class", "image-game img-thumbnail");
+
         let x = 0
         imageInfo.src = gameImages[x]
+
+        imageDiv.append(imageInfo)
 
         function changeImage() {
             if (x == 1) {
@@ -201,7 +214,6 @@ function getImage(title) {
             imageInfo.src = gameImages[x]
         }
         setInterval(changeImage, 4000)
-        game.append(imageInfo)
     })
 }
 
@@ -218,4 +230,3 @@ function update(title = 'final fantasy vii remake') {
 
 update();
 // Footer
-
