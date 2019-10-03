@@ -63,7 +63,7 @@ navLinkAnchor3.innerHTML = "About"
 // Title
 const pageTitle = document.createElement('h1')
 pageTitle.innerHTML = 'Find Information About Your Favorite Game!'
-$(pageTitle).attr("class", "title title-h1")
+$(pageTitle).attr("class", "title-h1")
 game.append(pageTitle);
 
 // Search Bar
