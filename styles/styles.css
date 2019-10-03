@@ -23,9 +23,11 @@ body {
     font-size: 20px;
     min-width: 110px;
     min-height: 40px;
+    max-width: 200px;
+    max-height: 67px;
     display: flex;
     flex-direction: column;
-    margin: 20px;
+    margin: 2%;
     align-items: center;
 }
 
@@ -60,7 +62,12 @@ body {
     justify-content: space-around;
 }
 
+
+
 body,
 a:hover {
-    cursor: url(http://cur.cursors-4u.net/mechanics/mec-5/mec443.cur), progress !important;
+
+    cursor: url(http://www.rw-designer.com/cursor-extern.php?id=123594), progress !important;
 }
+
+
