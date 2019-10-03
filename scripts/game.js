@@ -57,7 +57,7 @@ navLinkUL.append(navLinkLI3);
 $(navLinkLI3).attr("class", "nav-item");
 navLinkLI3.append(navLinkAnchor3);
 $(navLinkAnchor3).attr("class", "nav-link");
-$(navLinkAnchor3).attr("href", "/index.html#bottom");
+$(navLinkAnchor3).attr("href", "index.html#bottom");
 navLinkAnchor3.innerHTML = "About"
 
 // Title
