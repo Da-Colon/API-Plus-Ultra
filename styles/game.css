@@ -6,6 +6,10 @@ body {
     box-sizing: border-box;
 }
 
+.bg-dark {
+    opacity: 0.9;
+}
+
 .title-h1 {
     display: inline-block;
     padding-top: 70px;
