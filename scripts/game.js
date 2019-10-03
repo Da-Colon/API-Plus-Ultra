@@ -63,7 +63,7 @@ navLinkAnchor3.innerHTML = "About"
 // Title
 const pageTitle = document.createElement('h1')
 pageTitle.innerHTML = 'Find Information About Your Favorite Game!'
-$(pageTitle).attr("class", "title-h1")
+$(pageTitle).attr("class", "title title-h1")
 game.append(pageTitle);
 
 // Search Bar
@@ -87,26 +87,26 @@ $(barButton).attr("id", "button");
 $(barButton).attr("type", "submit");
 $(barButton).attr("class", "nes-btn search-btn")
 
-
-//  Main Content
-const main = document.createElement('main')
-game.append(main)
-$(main).attr("class", "main-ctn")
-
 barForm.addEventListener("submit", function(event) {
     event.preventDefault();
     const usrGame = barForm.querySelector('#input').value;
     if (usrGame.length <= 0) {
         alert('Please enter a Game Title')
     } else {
-        if (main.childElementCount >= 0) {
-            while (main.childElementCount > 0) {
-                main.removeChild(main.lastChild)
+        if (game.childElementCount >= 0) {
+            while (game.childElementCount > 1) {
+                game.removeChild(game.lastChild)
             }
         }
         update(usrGame);
     }
 });
+
+//  Main Content
+const main = document.createElement('main')
+game.append(main)
+$(main).attr("class", "main-ctn")
+
 
 
 
@@ -120,39 +120,25 @@ function getTitle(object) {
         titleInfo.innerHTML = gameName
         main.append(titleInfo);
         getDescription(gameName);
-
     });
 }
 
 function getPlatforms(object) {
 
-    // Use the then method to make a promise, arrow function with a info arguement pass in.
     object.then(info => {
-
-        // Find the Results
         const gamePlatform = info.results[0].platforms;
-
-        // Create div, ul and h4 element
         const platformCtn = document.createElement('div');
-        const platformTitle = document.createElement('h4');
-        const platformInfo = document.createElement('ul');
-
-        // make a call to the div add a attribute (class) 
         $(platformCtn).attr("class", "platform-ctn");
-
-        // Add a string between the opening and closing tags on the H4 element
-        platformTitle.innerHTML = 'This game is Available on These Consoles';
-
-        // append the created H4 and UL element 
+        const platformTitle = document.createElement('h4');
+        platformTitle.innerHTML = 'This game is Available on These Consoles'
+        const platformInfo = document.createElement('ul');
         platformCtn.append(platformTitle);
         platformCtn.append(platformInfo);
-        main.append(platformCtn);
-
-        // foreach 'platform' in the array in the API create a LI and write the data in the LI and attach to UL
+        main.append(platformCtn)
         gamePlatform.forEach(gameConsole => {
             const eachPlatform = document.createElement('li');
-            eachPlatform.innerHTML = gameConsole.platform.name;
             platformInfo.append(eachPlatform);
+            eachPlatform.innerHTML = gameConsole.platform.name;
 
         });
     });
@@ -163,14 +149,11 @@ function getDescription(title) {
     console.log(getDescription)
     getDescription.then(info => {
         const gameDescription = info.description
-        const descriptionDiv = document.createElement('div');
-        $(descriptionDiv).attr("class", "description-ctn")
-        const gameInfo = document.createElement('p');
+        const gameInfo = document.createElement('p')
         gameInfo.innerHTML = gameDescription;
-        descriptionDiv.append(gameInfo);
-        main.append(descriptionDiv);
+        game.append(gameInfo);
+        getImage(title)
     });
-    getImage(title)
 }
 
 function getImage(title) {
@@ -184,16 +167,9 @@ function getImage(title) {
             gameImages.push(gameImage2)
         }
 
-        const imageDiv = document.createElement('div');
-        $(imageDiv).attr("class", "image-ctn");
-        main.append(imageDiv)
-        const imageInfo = document.createElement('img');
-        $(imageInfo).attr("class", "image-game img-thumbnail");
-
+        const imageInfo = document.createElement('img')
         let x = 0
         imageInfo.src = gameImages[x]
-
-        imageDiv.append(imageInfo)
 
         function changeImage() {
             if (x == 1) {
@@ -205,6 +181,7 @@ function getImage(title) {
             imageInfo.src = gameImages[x]
         }
         setInterval(changeImage, 4000)
+        game.append(imageInfo)
     })
 }
 
@@ -227,13 +204,13 @@ footer.append(footerDiv);
 $(footerDiv).attr("class", "about")
 const img1 = document.createElement('img')
 $(img1).attr("src", "img/david.jpeg")
-$(img1).attr("class", "student rounded-circle")
+$(img1).attr("class", "student")
 const img2 = document.createElement('img')
 $(img2).attr("src", "img/kyra.jpeg")
-$(img2).attr("class", "student rounded-circle")
+$(img1).attr("class", "student")
 const img3 = document.createElement('img')
 $(img3).attr("src", "img/gil.jpeg")
-$(img3).attr("class", "student rounded-circle")
+$(img1).attr("class", "student")
 footerDiv.append(img1, img2, img3)
 
 
