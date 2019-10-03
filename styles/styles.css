@@ -62,17 +62,9 @@ body {
 }
 
 
-/* gameboy cursor for game page only
-body, a:hover
-{
-    cursor: url(http://cur.cursors-4u.net/mechanics/mec-5/mec443.cur), progress !important;
-} */
-
-
-/* For game.html / game.js */
-
 body,
 a:hover {
 
-    cursor: url(http://cur.cursors-4u.net/mechanics/mec-5/mec443.cur), progress !important;
+    cursor: url(http://www.rw-designer.com/cursor-extern.php?id=123594), progress !important;
 }
+
