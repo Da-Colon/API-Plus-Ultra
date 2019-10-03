@@ -55,6 +55,12 @@ body {
     width: 20%;
 }
 
+.desBox {
+    margin-top:70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 
 body, a:hover
 {
