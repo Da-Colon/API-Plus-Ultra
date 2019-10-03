@@ -53,19 +53,14 @@ body {
     width: 20%;
 }
 
-
 .desBox {
-    margin-top:70px;
+    margin-top: 70px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
-body, a:hover
-{
-
 body,
 a:hover {
-
     cursor: url(http://cur.cursors-4u.net/mechanics/mec-5/mec443.cur), progress !important;
 }
