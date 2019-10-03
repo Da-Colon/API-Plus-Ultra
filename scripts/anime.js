@@ -20,13 +20,31 @@ function strawHats() {
             //Setting pointers to HTML IDs as variables
             const icon = document.getElementById('icon1');
             const image = document.createElement('img');
+            const iframe = document.createElement('iframe')
             const title = document.getElementById('title1');
             const website = document.getElementById('website1');
             const desk = document.getElementById('description1');
             const lang = document.getElementById('lang1');
-            const canvas = document.getElementById('canvas1')
+            const canvas = document.getElementById('canvas1');
+            const embed = document.getElementById('embed1');
+            const link = document.getElementById('link1');
+
             
             //Using paring both variables to populate in webpage 
+            //First carousel item "Splash"
+            canvas.setAttribute('src', `https://image.tmdb.org/t/p/w300_and_h450_bestv2/${doodle}`);
+
+            //Second carousel item "Trailer"
+            embed.setAttribute('src', `https://www.youtube.com/embed/LYUuTF7vLcg`);
+            embed.style.width = "900px";
+            embed.style.height = "350px";
+            embed.style.frameborder = "0px";
+            document.body.appendChild(iframe);
+
+            //Third carousel item "Streaming page link"
+            link.setAttribute('src', `https://image.tmdb.org/t/p/w300_and_h450_bestv2//vUWWBAmfyJOQxZcPIwEJS2OByrJ.jpg`)
+
+            //Card items
             image.setAttribute('src', `https://image.tmdb.org/t/p/w300_and_h450_bestv2/${photo}`);
             icon.appendChild(image);
             title.innerHTML = name;
@@ -35,8 +53,10 @@ function strawHats() {
             website.setAttribute('target', '_blank');
             desk.innerHTML = overview;
             lang.innerHTML = dubs;
-            //image.setAttribute('src', `https://image.tmdb.org/t/p/w300_and_h450_bestv2/${photo}`);
-            //canvas.appendChild(image)
+            
+            
+            //<iframe width="560" height="315" src="https://www.youtube.com/embed/LYUuTF7vLcg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
         });
 
     const zoro = get(
@@ -55,11 +75,14 @@ function strawHats() {
             //
             const icon = document.getElementById('icon2');
             const image = document.createElement('img');
+            const iframe = document.createElement('iframe')
             const title = document.getElementById('title2');
             const website = document.getElementById('website2');
             const desk = document.getElementById('description2');
             const lang = document.getElementById('lang2');
             const canvas = document.getElementById('canvas2')
+            const embed = document.getElementById('embed2');
+            const link = document.getElementById('link2');
 
             //
             image.setAttribute('src', `https://image.tmdb.org/t/p/w300_and_h450_bestv2/${photo}`);
@@ -70,8 +93,7 @@ function strawHats() {
             website.setAttribute('target', '_blank');
             desk.innerHTML = overview;
             lang.innerHTML = dubs;
-            //image.setAttribute('src', `https://image.tmdb.org/t/p/w300_and_h450_bestv2/${photo}`);
-            //canvas.appendChild(image)
+            canvas.setAttribute('src', `https://image.tmdb.org/t/p/w300_and_h450_bestv2/${doodle}`);
         });
         const nami = get(
             `https://api.themoviedb.org/3/tv/45790?api_key=cc42102845a020075536de832b824222`
@@ -89,11 +111,14 @@ function strawHats() {
             //
             const icon = document.getElementById('icon3');
             const image = document.createElement('img');
+            const iframe = document.createElement('iframe')
             const title = document.getElementById('title3');
             const website = document.getElementById('website3');
             const desk = document.getElementById('description3');
             const lang = document.getElementById('lang3');
-            const canvas = document.getElementById('canvas3')
+            const canvas = document.getElementById('canvas3');
+            const embed = document.getElementById('embed3');
+            const link = document.getElementById('link3');
 
             //
             image.setAttribute('src', `https://image.tmdb.org/t/p/w300_and_h450_bestv2/${photo}`);
@@ -104,8 +129,7 @@ function strawHats() {
             website.setAttribute('target', '_blank');
             desk.innerHTML = overview;
             lang.innerHTML = dubs;
-            //image.setAttribute('src', `https://image.tmdb.org/t/p/w300_and_h450_bestv2/${photo}`);
-            //canvas.appendChild(image)
+            canvas.setAttribute('src', `https://image.tmdb.org/t/p/w300_and_h450_bestv2/${doodle}`);
             });
 
         const usopp = get( 
@@ -124,11 +148,14 @@ function strawHats() {
             //
             const icon = document.getElementById('icon4');
             const image = document.createElement('img');
+            const iframe = document.createElement('iframe')
             const title = document.getElementById('title4');
             const website = document.getElementById('website4');
             const desk = document.getElementById('description4');
             const lang = document.getElementById('lang4');
-            const canvas = document.getElementById('canvas4')
+            const canvas = document.getElementById('canvas4');
+            const embed = document.getElementById('embed4');
+            const link = document.getElementById('link4');
 
             //
             image.setAttribute('src', `https://image.tmdb.org/t/p/w300_and_h450_bestv2/${photo}`);
@@ -139,8 +166,7 @@ function strawHats() {
             website.setAttribute('target', '_blank');
             desk.innerHTML = overview;
             lang.innerHTML = dubs;
-            //image.setAttribute('src', `https://image.tmdb.org/t/p/w300_and_h450_bestv2/${photo}`);
-            //canvas.appendChild(image)
+            canvas.setAttribute('src', `https://image.tmdb.org/t/p/w300_and_h450_bestv2/${doodle}`);
             });
 
         const sanji = get( 
@@ -159,11 +185,14 @@ function strawHats() {
             //
             const icon = document.getElementById('icon5');
             const image = document.createElement('img');
+            const iframe = document.createElement('iframe')
             const title = document.getElementById('title5');
             const website = document.getElementById('website5');
             const desk = document.getElementById('description5');
             const lang = document.getElementById('lang5');
-            const canvas = document.getElementById('canvas5')
+            const canvas = document.getElementById('canvas5');
+            const embed = document.getElementById('embed5');
+            const link = document.getElementById('link5');
 
             //
             image.setAttribute('src', `https://image.tmdb.org/t/p/w300_and_h450_bestv2/${photo}`);
@@ -174,8 +203,7 @@ function strawHats() {
             website.setAttribute('target', '_blank');
             desk.innerHTML = overview;
             lang.innerHTML = dubs;
-            //image.setAttribute('src', `https://image.tmdb.org/t/p/w300_and_h450_bestv2/${photo}`);
-            //canvas.appendChild(image)
+            canvas.setAttribute('src', `https://image.tmdb.org/t/p/w300_and_h450_bestv2/${doodle}`);
             });
 
         const chopper = get( 
@@ -194,11 +222,14 @@ function strawHats() {
             //
             const icon = document.getElementById('icon6');
             const image = document.createElement('img');
+            const iframe = document.createElement('iframe')
             const title = document.getElementById('title6');
             const website = document.getElementById('website6');
             const desk = document.getElementById('description6');
             const lang = document.getElementById('lang6');
-            const canvas = document.getElementById('canvas6')
+            const canvas = document.getElementById('canvas6');
+            const embed = document.getElementById('embed6');
+            const link = document.getElementById('link6');
 
             //
             image.setAttribute('src', `https://image.tmdb.org/t/p/w300_and_h450_bestv2/${photo}`);
@@ -209,8 +240,7 @@ function strawHats() {
             website.setAttribute('target', '_blank');
             desk.innerHTML = overview;
             lang.innerHTML = dubs;
-            //image.setAttribute('src', `https://image.tmdb.org/t/p/w300_and_h450_bestv2/${photo}`);
-            //canvas.appendChild(image)
+            canvas.setAttribute('src', `https://image.tmdb.org/t/p/w300_and_h450_bestv2/${doodle}`);
             });
         }
 strawHats()
@@ -239,3 +269,16 @@ strawHats()
                 </div>
             </div>
         </div>*/
+
+//add SAO, .HACK, Persona 5, Danganronpa, Kirby, Devil May Cry, Pokemon, Castlevania
+
+//<img src="https://img1.ak.crunchyroll.com/i/spire3/${8522d0abbd4217fc6b4628b1488577561533274977_full.jpg}" class="poster xsmall-margin-bottom" alt="Muhyo &amp; Roji's Bureau of Supernatural Investigation">
+
+//<img src="https://img1.ak.crunchyroll.com/i/spire3/${04b29833ccaaf2ee6bda1d08f2f02ecf1539039197_full.jpg}" class="poster xsmall-margin-bottom" alt="JoJo's Bizarre Adventure">
+
+/*.canvas2
+{object-fit: cover;
+    width:900px;
+    height: 350px;
+
+}*/
