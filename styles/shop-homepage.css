@@ -1,8 +1,26 @@
-/*!
- * Start Bootstrap - Shop Homepage (https://startbootstrap.com/template-overviews/shop-homepage)
- * Copyright 2013-2019 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-shop-homepage/blob/master/LICENSE)
- */
 body {
-  padding-top: 56px;
+  padding-top: 60px; 
 }
+
+html {
+  background: url(../img/animebg.jpg);
+  background-position: top;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.centerContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+body, a:hover
+{
+  cursor: url(http://cur.cursors-4u.net/anime/ani-2/ani254.ani), url(http://cur.cursors-4u.net/anime/ani-2/ani254.png), progress !important;
+}
+
