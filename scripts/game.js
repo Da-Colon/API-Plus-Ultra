@@ -23,8 +23,6 @@ navBar.append(navDiv);
 $('nav').attr("class", "navbar navbar-expand-lg navbar-dark bg-dark fixed-top ");
 $(navDiv).attr("class", "container");
 
-
-navx
 $(navButton).attr("class", "navbar-toggler");
 $(navButton).attr("type", "button");
 $(navButton).attr("data-toggle", "collapse");
@@ -232,3 +230,11 @@ function update(title = 'final fantasy vii remake') {
 
 update();
 // Footer
+
+
+const goku = get("https://api.themoviedb.org/3/search/tv?api_key=cc42102845a020075536de832b824222&language=en-US&query=Dragonball%20z&page=1")
+
+goku.then(info => {
+    const gokuDescription = info.results[1].overview
+    console.log(gokuDescription)
+})
