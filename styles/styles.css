@@ -55,13 +55,13 @@ body {
     width: 20%;
 }
 
-
 .desBox {
-    margin-top:70px;
+    margin-top: 70px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
+
 
 
 body,
@@ -69,4 +69,5 @@ a:hover {
 
     cursor: url(http://www.rw-designer.com/cursor-extern.php?id=123594), progress !important;
 }
+
 
