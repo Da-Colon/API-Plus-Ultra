@@ -1,14 +1,16 @@
 "use strict"
 
+
 //grabbing data for for first page
 function strawHats() {
-    const luffy = get( 
+    const luffy = get(
         `https://api.themoviedb.org/3/tv/80853?api_key=cc42102845a020075536de832b824222`
-        );//Muhyo & Roji
-        
-        luffy.then(function(rubber) {
-            console.log(rubber)
+    ); //Muhyo & Roji
+
+    luffy.then(function(rubber) {
+        console.log(rubber)
             //Grabbing relvent information of which to populate in the DOM
+
             
             const doodle = rubber.backdrop_path
             const photo = rubber.poster_path
@@ -242,9 +244,8 @@ function strawHats() {
             lang.innerHTML = dubs;
             canvas.setAttribute('src', `https://image.tmdb.org/t/p/w300_and_h450_bestv2/${doodle}`);
             });
-        }
-strawHats()
 
+strawHats()
 
 //.homepage for target's wesite|.name for target's title|.overview for target's description|.poster_path for target's card image|.backdrop_path for carousel image|.original_language for languages
 
