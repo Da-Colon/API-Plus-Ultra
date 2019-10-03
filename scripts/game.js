@@ -1,11 +1,5 @@
 // Main Call to Div
 const game = document.querySelector(`[data-gameTitle]`);
-$('body').css({
-    'cursor': 'url(./img/gameIcon.png), default'
-});
-
-
-
 
 // Nav Bar
 const navBar = document.createElement('nav')
@@ -23,12 +17,14 @@ const navLinkAnchor3 = document.createElement('a')
 
 
 game.append(navBar);
+
+
 navBar.append(navDiv);
 $('nav').attr("class", "navbar navbar-expand-lg navbar-dark bg-dark fixed-top ");
 $(navDiv).attr("class", "container");
 
 
-navDiv.append(navButton);
+navx
 $(navButton).attr("class", "navbar-toggler");
 $(navButton).attr("type", "button");
 $(navButton).attr("data-toggle", "collapse");
@@ -124,10 +120,6 @@ function regEx(word) {
     return title;
 }
 
-// function regEx2(word) {
-//     const title = word.replace(/\s/g, "-");
-//     return title;
-// }
 
 function getTitle(object) {
     object.then(info => {
@@ -232,32 +224,11 @@ function getImage(title) {
 function update(title = 'final fantasy vii remake') {
     if (location.search) {
         title = location.search;
-
     }
     const gameGet = get(`https://api.rawg.io/api/games?search=${title.replace(/\?/g, " ")}`);
-
     getTitle(gameGet);
     getPlatforms(gameGet);
 };
 
 update();
 // Footer
-const footerAnchor = document.createElement('a');
-game.append(footerAnchor);
-$(footerAnchor).attr("name", "bottom");
-const footer = document.createElement('footer');
-footerAnchor.append(footer);
-$(footer).attr("class", "footer");
-const footerDiv = document.createElement('div');
-footer.append(footerDiv);
-$(footerDiv).attr("class", "about");
-const img1 = document.createElement('img')
-$(img1).attr("src", "img/david.jpeg");
-$(img1).attr("class", "student rounded-circle");
-const img2 = document.createElement('img')
-$(img2).attr("src", "img/kyra.jpeg");
-$(img2).attr("class", "student rounded-circle");
-const img3 = document.createElement('img')
-$(img3).attr("src", "img/gil.jpeg");
-$(img3).attr("class", "student rounded-circle");
-footerDiv.append(img1, img2, img3)
