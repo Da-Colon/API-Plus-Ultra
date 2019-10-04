@@ -18,6 +18,7 @@ const navLinkAnchor3 = document.createElement('a')
 // NAVBAR APPENDING ELEMENTS TO EACH OTHER
 game.append(navBar);
 navBar.append(navDiv);
+navDiv.append(navButton);
 navButton.append(buttonSpan);
 navDiv.append(navLinkDiv);
 navLinkDiv.append(navLinkUL);
@@ -42,13 +43,13 @@ $(buttonSpan).attr("class", "navbar-toggler-icon");
 $(navLinkDiv).attr("class", "collapse navbar-collapse");
 $(navLinkDiv).attr("id", "navbarResponsive");
 $(navLinkUL).attr("class", "navbar-nav ml-auto");
-$(navLinkLI1).attr("class", "nav-item");
+$(navLinkLI1).attr("class", "nav-item active");
 $(navLinkAnchor1).attr("class", "nav-link");
 $(navLinkAnchor1).attr("href", "index.html");
-$(navLinkLI2).attr("class", "nav-item");
+$(navLinkLI2).attr("class", "nav-item active");
 $(navLinkAnchor2).attr("class", "nav-link");
 $(navLinkAnchor2).attr("href", "anime.html");
-$(navLinkLI3).attr("class", "nav-item");
+$(navLinkLI3).attr("class", "nav-item active");
 $(navLinkAnchor3).attr("class", "nav-link");
 $(navLinkAnchor3).attr("href", "/index.html#bottom");
 
@@ -58,14 +59,10 @@ navLinkAnchor2.innerHTML = "Anime"
 navLinkAnchor3.innerHTML = "About"
 
 // Page Title
-const pageTitle = document.createElement('h1')
-
-game.append(pageTitle);
-
+const pageTitle = document.createElement('h1');
 $(pageTitle).attr("class", "title-h1");
-
 pageTitle.innerHTML = 'Find Information About Your Favorite Game!'
-
+game.append(pageTitle);
 
 // Search Bar
 const barForm = document.createElement('form');
@@ -122,11 +119,12 @@ function regEx(word) {
 function getTitle(object) {
     object.then(info => {
         const gameName = info.results[0].slug;
+        const titleName = gameName.replace(/-/g, " ");
         const titleInfo = document.createElement('h1');
         $(titleInfo).attr("class", "title-game");
-        titleInfo.innerHTML = gameName
+        titleInfo.innerHTML = titleName
         main.append(titleInfo);
-        getDescription(gameName)
+        getDescription(gameName);
 
 
     });
@@ -212,7 +210,7 @@ function getImage(title) {
         imageDiv.append(imageInfo)
 
         $(imageDiv).attr("class", "image-ctn");
-        $(imageInfo).attr("class", "image-game img-thumbnail");
+        $(imageInfo).attr("class", "img-thumbnail image-game");
 
         imageInfo.src = gameImages[x]
 

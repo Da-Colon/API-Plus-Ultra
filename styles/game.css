@@ -1,12 +1,12 @@
 * {
     cursor: url(http://cur.cursors-4u.net/games/gam-10/gam948.ani), url(http://cur.cursors-4u.net/games/gam-10/gam948.png), auto !important;
+    box-sizing: border-box;
 }
 
 html,
 body {
     background: url('/img/border.png');
     background-size: cover;
-    box-sizing: border-box;
     max-height: 100%;
 }
 
@@ -82,6 +82,7 @@ body {
     padding: 20px;
     text-align: center;
     text-orientation: upright;
+    text-transform: uppercase;
     writing-mode: vertical-lr;
 }
 
@@ -129,13 +130,12 @@ body {
     border: solid black;
     flex: 1 1 100%;
     height: 100%;
+    width: fit-content;
 }
 
 .image-game {
-    height: 100%;
-    min-height: 300px;
-    max-height: 100%;
-    min-width: 100%
+    /* height: 100px;
+    width: 100px; */
 }
 
 .footer {
@@ -159,7 +159,7 @@ body {
     width: 250px;
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1200px) {
     html,
     body {
         background-size: cover;
@@ -186,11 +186,9 @@ body {
         writing-mode: unset;
     }
     .image-game {
-        height: 100%;
-        max-height: 100%;
-        min-height: 400px;
-        min-width: 100%;
-        width: 100%
+        justify-self: center;
+        min-height: 500px;
+        width: auto;
     }
     .description-ctn {
         min-height: 400px;
@@ -210,5 +208,6 @@ body {
     }
     .platform-ctn ul li {
         padding: 2rem;
+        padding-bottom: 200px;
     }
 }
