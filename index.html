@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>The SoulReapers</title>
-    <link rel="icon" type="image/png" href="img/nerdGlasses.png"/>
+    <link rel="icon" type="image/png" href="img/nerdGlasses.png" />
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
@@ -21,41 +21,69 @@
         <a class="nes-btn btn-size fontSize" href="#bottom">About</a>
     </div>
 
+    <!-- goku modal -->
+<button type="button" class="btn" id="gokuModal" data-toggle="modal" data-target="#exampleModalScrollable">
+        Launch modal
+    </button>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalScrollableTitle">Goku</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div id='gokuDes' class="modal-body">
+            ...
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">See More</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <a href="game.html?Super Mario World">Click Here</a>
 
-<a name='bottom'>
-<div class='footer'>
-<div class='about'>
-            <img id='davidGit' class='rounded-circle student' src='img/david.jpeg'/>
-            <img id='kyraGit' class='rounded-circle student' src='img/kyra.jpeg'/>
-            <img id='gilGit' class='rounded-circle student' src='img/gil.jpeg'/>
-    </div>
-    <div class='desBox'>
-        <div class="nes-container with-title is-rounded">
-            <p class="title">David</p>
-            <p>Enter words<br>
-                here. Just be <br>
-                sure to break <br>
-                it up.</p>
+
+    <a name='bottom'>
+        <div class='footer'>
+            <div class='about'>
+                <img id='davidGit' class='rounded-circle student' src='img/david.jpeg' />
+                <img id='kyraGit' class='rounded-circle student' src='img/kyra.jpeg' />
+                <img id='gilGit' class='rounded-circle student' src='img/gil.jpeg' />
+            </div>
+            <div class='desBox'>
+                <div class="nes-container with-title is-rounded">
+                    <p class="title">David</p>
+                    <p>Enter words</br>
+                        here. Just be </br>
+                        sure to break </br>
+                        it up.</p>
+                </div>
+                <div class="nes-container with-title is-rounded">
+                    <p class="title">Kyra</p>
+                    <p>If you don't</br>
+                        break it up, </br>
+                        the box size </br>
+                        gets kinda </br>
+                        wonky.</p>
+                </div>
+                <div class="nes-container with-title is-rounded">
+                    <p class="title">Gil</p>
+                    <p>I tried to</br>
+                        size the box </br>
+                        with </br>
+                        max-width </br>
+                        but no luck.</p>
+                </div>
+            </div>
         </div>
-        <div class="nes-container with-title is-rounded">
-            <p class="title">Kyra</p>
-            <p>If you don't</br>
-                break it up, </br>
-                the box size </br>
-                gets kinda </br>
-                wonky.</p>
-        </div>
-        <div class="nes-container with-title is-rounded">
-            <p class="title">Gil</p>
-            <p>I tried to</br>
-                size the box </br>
-                with </br>
-                max-width </br>
-                but no luck.</p>
-        </div>
-    </div>
-</div>
-</a>
+    </a>
     <!-- JQUERY SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

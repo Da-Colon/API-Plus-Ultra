@@ -17,12 +17,12 @@ const navLinkAnchor3 = document.createElement('a')
 
 
 game.append(navBar);
+
+
 navBar.append(navDiv);
-$('nav').attr("class", "navbar navbar-expand-lg navbar-dark bg-dark fixed-top ")
-$(navDiv).attr("class", "container")
+$('nav').attr("class", "navbar navbar-expand-lg navbar-dark bg-dark fixed-top ");
+$(navDiv).attr("class", "container");
 
-
-navDiv.append(navButton);
 $(navButton).attr("class", "navbar-toggler");
 $(navButton).attr("type", "button");
 $(navButton).attr("data-toggle", "collapse");
@@ -30,7 +30,7 @@ $(navButton).attr("data-target", "#navbarResponsive");
 $(navButton).attr("aria-controls", "#navbarResponsive");
 $(navButton).attr("aria-expanded", "false");
 $(navButton).attr("aria-label", "Toggle navigation");
-navButton.append(buttonSpan)
+navButton.append(buttonSpan);
 $(buttonSpan).attr("class", "navbar-toggler-icon");
 
 navDiv.append(navLinkDiv);
@@ -63,7 +63,7 @@ navLinkAnchor3.innerHTML = "About"
 // Title
 const pageTitle = document.createElement('h1')
 pageTitle.innerHTML = 'Find Information About Your Favorite Game!'
-$(pageTitle).attr("class", "title title-h1")
+$(pageTitle).attr("class", "title-h1");
 game.append(pageTitle);
 
 // Search Bar
@@ -77,15 +77,22 @@ game.append(barForm);
 barButton.innerHTML = 'Search'
 
 
-$(barForm).attr("class", "search-form")
+$(barForm).attr("class", "search-form");
 $(barForm).attr("id", "#form");
 $(barInput).attr("id", "input");
-$(barInput).attr("class", "search-input")
+$(barInput).attr("class", "search-input");
 $(barInput).attr("placeholder", "Find a Game!");
 $(barInput).attr("type", "text");
 $(barButton).attr("id", "button");
 $(barButton).attr("type", "submit");
 $(barButton).attr("class", "nes-btn search-btn")
+
+
+//  Main Content
+const main = document.createElement('main')
+game.append(main);
+$(main).attr("class", "main-ctn");
+
 
 barForm.addEventListener("submit", function(event) {
     event.preventDefault();
@@ -93,71 +100,90 @@ barForm.addEventListener("submit", function(event) {
     if (usrGame.length <= 0) {
         alert('Please enter a Game Title')
     } else {
-        if (game.childElementCount >= 0) {
-            while (game.childElementCount > 1) {
-                game.removeChild(game.lastChild)
+        if (main.childElementCount >= 0) {
+
+            while (main.childElementCount > 0) {
+                main.removeChild(main.lastChild)
             }
         }
-        update(usrGame);
+        window.open(`/game.html?${usrGame}`, "blank_")
+
     }
 });
 
-//  Main Content
-const main = document.createElement('main')
-game.append(main)
-$(main).attr("class", "main-ctn")
 
 
-
-
+function regEx(word) {
+    const title = word.replace(/\s/g, "%20");
+    return title;
+}
 
 
 function getTitle(object) {
     object.then(info => {
-        const gameName = info.results[0].name;
+        const gameName = info.results[0].slug;
         const titleInfo = document.createElement('h1');
         $(titleInfo).attr("class", "title-game");
         titleInfo.innerHTML = gameName
         main.append(titleInfo);
-        getDescription(gameName);
+        getDescription(gameName)
+
+
     });
 }
 
 function getPlatforms(object) {
 
+    // Use the then method to make a promise, arrow function with a info arguement pass in.
     object.then(info => {
+
+        // Find the Results
         const gamePlatform = info.results[0].platforms;
+
+        // Create div, ul and h4 element
         const platformCtn = document.createElement('div');
-        $(platformCtn).attr("class", "platform-ctn");
         const platformTitle = document.createElement('h4');
-        platformTitle.innerHTML = 'This game is Available on These Consoles'
         const platformInfo = document.createElement('ul');
+
+        // make a call to the div add a attribute (class) 
+        $(platformCtn).attr("class", "platform-ctn");
+
+        // Add a string between the opening and closing tags on the H4 element
+        platformTitle.innerHTML = 'This game is Available on These Consoles';
+
+        // append the created H4 and UL element 
         platformCtn.append(platformTitle);
         platformCtn.append(platformInfo);
-        main.append(platformCtn)
+        main.append(platformCtn);
+
+        // foreach 'platform' in the array in the API create a LI and write the data in the LI and attach to UL
         gamePlatform.forEach(gameConsole => {
             const eachPlatform = document.createElement('li');
-            platformInfo.append(eachPlatform);
             eachPlatform.innerHTML = gameConsole.platform.name;
+            platformInfo.append(eachPlatform);
 
         });
     });
 }
 
 function getDescription(title) {
-    const getDescription = get(`https://api.rawg.io/api/games/${(title.replace(/\s/g, "-"))}`)
-    console.log(getDescription)
+    console.log(title)
+    const getDescription = get(`https://api.rawg.io/api/games/${title}`)
     getDescription.then(info => {
         const gameDescription = info.description
-        const gameInfo = document.createElement('p')
+        const descriptionDiv = document.createElement('div');
+        $(descriptionDiv).attr("class", "description-ctn")
+        const gameInfo = document.createElement('p');
         gameInfo.innerHTML = gameDescription;
-        game.append(gameInfo);
-        getImage(title)
+        descriptionDiv.append(gameInfo);
+        main.append(descriptionDiv);
     });
+    console.log(title)
+    getImage(title)
 }
 
 function getImage(title) {
-    const getDescription = get(`https://api.rawg.io/api/games/${(title.replace(/\s/g, "-"))}`)
+    const getDescription = get(`https://api.rawg.io/api/games/${title}`)
     let gameImages = []
     getDescription.then(info => {
         const gameImage = info.background_image
@@ -167,9 +193,16 @@ function getImage(title) {
             gameImages.push(gameImage2)
         }
 
-        const imageInfo = document.createElement('img')
+        const imageDiv = document.createElement('div');
+        $(imageDiv).attr("class", "image-ctn");
+        main.append(imageDiv)
+        const imageInfo = document.createElement('img');
+        $(imageInfo).attr("class", "image-game img-thumbnail");
+
         let x = 0
         imageInfo.src = gameImages[x]
+
+        imageDiv.append(imageInfo)
 
         function changeImage() {
             if (x == 1) {
@@ -181,47 +214,19 @@ function getImage(title) {
             imageInfo.src = gameImages[x]
         }
         setInterval(changeImage, 4000)
-        game.append(imageInfo)
     })
 }
 
 
-function update(title = 'Final-Fantasy-7') {
-    const gameGet = get(`https://api.rawg.io/api/games?page_size=5&search=${title}`);
+
+function update(title = 'final fantasy vii remake') {
+    if (location.search) {
+        title = location.search;
+    }
+    const gameGet = get(`https://api.rawg.io/api/games?search=${title.replace(/\?/g, " ")}`);
     getTitle(gameGet);
     getPlatforms(gameGet);
-}
-
-// Footer
-const footerAnchor = document.createElement('a');
-game.append(footerAnchor);
-$(footerAnchor).attr("name", "bottom");
-const footer = document.createElement('footer');
-footerAnchor.append(footer);
-$(footer).attr("class", "footer")
-const footerDiv = document.createElement('div');
-footer.append(footerDiv);
-$(footerDiv).attr("class", "about")
-const img1 = document.createElement('img')
-$(img1).attr("src", "img/david.jpeg")
-$(img1).attr("class", "student")
-const img2 = document.createElement('img')
-$(img2).attr("src", "img/kyra.jpeg")
-$(img1).attr("class", "student")
-const img3 = document.createElement('img')
-$(img3).attr("src", "img/gil.jpeg")
-$(img1).attr("class", "student")
-footerDiv.append(img1, img2, img3)
-
-
-
-
-
-
-
-
-
-
-
+};
 
 update();
+// Footer
