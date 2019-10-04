@@ -1,6 +1,14 @@
 // SET VARIABLE TO BODY
 const game = document.querySelector('body')
 
+// CREATE CANVAS
+// const canvas = document.createElement('canvas');
+// game.append(canvas);
+// $(canvas).attr("id", "myCanvas");
+// $(canvas).attr("class", "myCanvas");
+
+
+
 // NAVBAR VARIABLES 
 const navBar = document.createElement('nav')
 const navDiv = document.createElement('div')
@@ -14,6 +22,7 @@ const navLinkLI3 = document.createElement('li')
 const navLinkAnchor1 = document.createElement('a')
 const navLinkAnchor2 = document.createElement('a')
 const navLinkAnchor3 = document.createElement('a')
+
 
 // NAVBAR APPENDING ELEMENTS TO EACH OTHER
 game.append(navBar);
@@ -105,10 +114,12 @@ barForm.addEventListener("submit", function(event) {
                 main.removeChild(main.lastChild)
             }
         }
-        window.open(`/game.html?${usrGame}`, "blank_")
+        window.open(`/game.html?${usrGame}`, "_self")
 
     }
 });
+
+
 
 function regEx(word) {
     const title = word.replace(/\s/g, "%20");
@@ -227,13 +238,22 @@ function getImage(title) {
     })
 };
 
-
-
-(function(title = 'final fantasy vii remake') {
+$(document).ready(function({ title = 'final fantasy vii remake' }) {
     if (location.search) {
         title = location.search;
     }
     const gameGet = get(`https://api.rawg.io/api/games?search=${title.replace(/\?/g, " ")}`);
     getTitle(gameGet);
     getPlatforms(gameGet);
-})();
+
+
+
+});
+
+const playerShip = document.createElement('div');
+game.append(playerShip);
+$(playerShip).attr("class", "playerShip")
+
+playerShip.addEventListener('click', function() {
+    window.open('index.html')
+})
