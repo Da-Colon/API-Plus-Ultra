@@ -41,7 +41,6 @@ function strawHats() {
         embed.style.width = "900px";
         embed.style.height = "350px";
         embed.style.frameborder = "0px";
-        document.body.appendChild(iframe);
 
         //Third carousel item "Streaming page link"
         link.setAttribute('src', `https://image.tmdb.org/t/p/w300_and_h450_bestv2//vUWWBAmfyJOQxZcPIwEJS2OByrJ.jpg`)

@@ -1,5 +1,7 @@
-body {
-  padding-top: 60px; 
+body,
+a:hover {
+  padding-top: 60px;
+  cursor: url(http://cur.cursors-4u.net/anime/ani-10/ani953.cur), progress !important;
 }
 
 html {
@@ -18,4 +20,8 @@ html {
   justify-content: center;
 }
 
-* {cursor: url(http://cur.cursors-4u.net/anime/ani-10/ani953.cur), auto !important;}
+.canvas2 {
+  object-fit: cover;
+  width:900px;
+  height: 350px;
+}
