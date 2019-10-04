@@ -1,24 +1,22 @@
 * {
     cursor: url(http://cur.cursors-4u.net/games/gam-10/gam948.ani), url(http://cur.cursors-4u.net/games/gam-10/gam948.png), auto !important;
+    box-sizing: border-box;
 }
 
 html,
 body {
     background: url('/img/border.png');
     background-size: cover;
-    box-sizing: border-box;
     max-height: 100%;
 }
 
-
-/* .nav {
-    opacity: 0.2;
-} */
-
-
-/* .nav-link {
-    text-shadow: 10px 10px rgb(31, 30, 30);
-} */
+.myCanvas {
+    position: absolute;
+    width: 130%;
+    height: 130%;
+    pointer-events: none;
+    z-index: 2;
+}
 
 .title-h1 {
     background-color: rgba(221, 221, 221, 0.2);
@@ -82,6 +80,7 @@ body {
     padding: 20px;
     text-align: center;
     text-orientation: upright;
+    text-transform: uppercase;
     writing-mode: vertical-lr;
 }
 
@@ -89,7 +88,7 @@ body {
     align-items: center;
     background-color: rgba(190, 189, 189, 0.6);
     display: flex;
-    flex: 1 1 100%;
+    flex: 1 1.2 100%;
     flex-direction: column;
     font-family: 'Press Start 2P', Arial, Helvetica, sans-serif;
     font-size: 1.272em;
@@ -129,13 +128,13 @@ body {
     border: solid black;
     flex: 1 1 100%;
     height: 100%;
+    width: fit-content;
 }
 
 .image-game {
-    height: 100%;
-    min-height: 300px;
-    max-height: 100%;
-    min-width: 100%
+    justify-self: center;
+    min-height: 100%;
+    width: auto;
 }
 
 .footer {
@@ -159,7 +158,7 @@ body {
     width: 250px;
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1200px) {
     html,
     body {
         background-size: cover;
@@ -186,11 +185,9 @@ body {
         writing-mode: unset;
     }
     .image-game {
-        height: 100%;
-        max-height: 100%;
-        min-height: 400px;
-        min-width: 100%;
-        width: 100%
+        justify-self: center;
+        min-height: 500px;
+        width: auto;
     }
     .description-ctn {
         min-height: 400px;
@@ -210,5 +207,49 @@ body {
     }
     .platform-ctn ul li {
         padding: 2rem;
+        padding-bottom: 200px;
+    }
+}
+
+.playerShip {
+    position: absolute;
+    background: url('/img/playerShip.png');
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    animation-name: playerShip;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-delay: 30s;
+    animation-iteration-count: infinite;
+    /* animation-direction: alternate; */
+    animation-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    transform: rotate(45deg);
+}
+
+@keyframes playerShip {
+    0% {
+        left: 0px;
+        bottom: 0px;
+    }
+    25% {
+        left: 200px;
+        bottom: 100px;
+    }
+    50% {
+        left: 400px;
+        bottom: 200px;
+    }
+    75% {
+        left: 600px;
+        bottom: 300px;
+    }
+    95% {
+        transform: rotate(90deg);
+        left: 800px;
+        bottom: 400px;
+    }
+    100% {
+        left: 200%;
     }
 }
