@@ -5,25 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- This is our page title and icon -->
     <title>The SoulReapers</title>
     <link rel="icon" type="image/png" href="img/nerdGlasses.png" />
-
+<!-- Stylesheets -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
-
 <body>
+<!-- NES style buttons -->
     <div class='wrapper'>
         <a class="nes-btn btn-size fontSize" href="anime.html">Anime</a>
         <a class="nes-btn btn-size fontSize" href="game.html">Games</a>
         <a class="nes-btn btn-size fontSize" href="#bottom">About</a>
     </div>
-
-    <a href="game.html?Call of Duty">Click Here</a>
-
-
+<!-- Secret buttons -->
+        <a class='gokuModal' data-toggle="modal" data-target="#exampleModalScrollable"></a>
+        <a class='marioModal'href="game.html?Super Mario World"></a>
+<!-- Modal -->
+    <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalScrollableTitle">Goku</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div  class="modal-body">
+                <p id='gokuDes'> </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a href="anime.html" class="btn btn-primary" role="button" type="button" class="btn btn-primary" href="anime.html">See More Anime</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Footer -->
     <a name='bottom'>
         <div class='footer'>
             <div class='about'>
@@ -32,32 +53,21 @@
                 <img id='gilGit' class='rounded-circle student' src='img/gil.jpeg' />
             </div>
             <div class='desBox'>
-
                 <div class="nes-container with-title is-rounded">
                     <p class="title">David</p>
-                    <p>Enter words</br>
-                        here. Just be </br>
-                        sure to break </br>
-                        it up.</p>
+                    <p>Geek.</p>
                 </div>
                 <div class="nes-container with-title is-rounded">
                     <p class="title">Kyra</p>
-                    <p>If you don't</br>
-                        break it up, </br>
-                        the box size </br>
-                        gets kinda </br>
-                        wonky.</p>
+                    <p>Dork.</p>
                 </div>
                 <div class="nes-container with-title is-rounded">
                     <p class="title">Gil</p>
-                    <p>I tried to</br>
-                        size the box </br>
-                        with </br>
-                        max-width </br>
-                        but no luck.</p>
+                    <p>Weeb.</p>
                 </div>
-
-
+            </div>
+            <div class='dclogo'>
+                <img src='img/dclogo.jpeg'/>
             </div>
         </div>
     </a>
@@ -69,5 +79,4 @@
     <script src="scripts/get.js"></script>
     <script src="scripts/main.js"></script>
 </body>
-
 </html>

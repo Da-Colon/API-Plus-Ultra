@@ -65,6 +65,7 @@ $(navLinkAnchor3).attr("href", "/index.html#bottom");
 // NAVBAR SET INNER HTML
 navLinkAnchor1.innerHTML = "Home"
 navLinkAnchor2.innerHTML = "Anime"
+
 navLinkAnchor3.innerHTML = "About"
 
 // Page Title
