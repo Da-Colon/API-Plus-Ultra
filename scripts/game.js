@@ -1,7 +1,15 @@
-// Main Call to Div
-const game = document.querySelector(`[data-gameTitle]`);
+// SET VARIABLE TO BODY
+const game = document.querySelector('body')
 
-// Nav Bar
+// CREATE CANVAS
+// const canvas = document.createElement('canvas');
+// game.append(canvas);
+// $(canvas).attr("id", "myCanvas");
+// $(canvas).attr("class", "myCanvas");
+
+
+
+// NAVBAR VARIABLES 
 const navBar = document.createElement('nav')
 const navDiv = document.createElement('div')
 const navButton = document.createElement('button')
@@ -16,13 +24,23 @@ const navLinkAnchor2 = document.createElement('a')
 const navLinkAnchor3 = document.createElement('a')
 
 
+// NAVBAR APPENDING ELEMENTS TO EACH OTHER
 game.append(navBar);
-
-
 navBar.append(navDiv);
+navDiv.append(navButton);
+navButton.append(buttonSpan);
+navDiv.append(navLinkDiv);
+navLinkDiv.append(navLinkUL);
+navLinkUL.append(navLinkLI1);
+navLinkLI1.append(navLinkAnchor1);
+navLinkUL.append(navLinkLI2);
+navLinkLI2.append(navLinkAnchor2);
+navLinkUL.append(navLinkLI3);
+navLinkLI3.append(navLinkAnchor3);
+
+// NAVBAR ATTRIBUTES
 $('nav').attr("class", "navbar navbar-expand-lg navbar-dark bg-dark fixed-top ");
 $(navDiv).attr("class", "container");
-
 $(navButton).attr("class", "navbar-toggler");
 $(navButton).attr("type", "button");
 $(navButton).attr("data-toggle", "collapse");
@@ -30,53 +48,41 @@ $(navButton).attr("data-target", "#navbarResponsive");
 $(navButton).attr("aria-controls", "#navbarResponsive");
 $(navButton).attr("aria-expanded", "false");
 $(navButton).attr("aria-label", "Toggle navigation");
-navButton.append(buttonSpan);
 $(buttonSpan).attr("class", "navbar-toggler-icon");
-
-navDiv.append(navLinkDiv);
 $(navLinkDiv).attr("class", "collapse navbar-collapse");
 $(navLinkDiv).attr("id", "navbarResponsive");
-navLinkDiv.append(navLinkUL);
 $(navLinkUL).attr("class", "navbar-nav ml-auto");
-
-navLinkUL.append(navLinkLI1);
-$(navLinkLI1).attr("class", "nav-item");
-navLinkLI1.append(navLinkAnchor1);
+$(navLinkLI1).attr("class", "nav-item active");
 $(navLinkAnchor1).attr("class", "nav-link");
 $(navLinkAnchor1).attr("href", "index.html");
-navLinkAnchor1.innerHTML = "Home"
-
-navLinkUL.append(navLinkLI2);
-$(navLinkLI2).attr("class", "nav-item");
-navLinkLI2.append(navLinkAnchor2);
+$(navLinkLI2).attr("class", "nav-item active");
 $(navLinkAnchor2).attr("class", "nav-link");
 $(navLinkAnchor2).attr("href", "anime.html");
+$(navLinkLI3).attr("class", "nav-item active");
+$(navLinkAnchor3).attr("class", "nav-link");
+$(navLinkAnchor3).attr("href", "/index.html#bottom");
+
+// NAVBAR SET INNER HTML
+navLinkAnchor1.innerHTML = "Home"
 navLinkAnchor2.innerHTML = "Anime"
 
-navLinkUL.append(navLinkLI3);
-$(navLinkLI3).attr("class", "nav-item");
-navLinkLI3.append(navLinkAnchor3);
-$(navLinkAnchor3).attr("class", "nav-link");
-$(navLinkAnchor3).attr("href", "index.html#bottom");
 navLinkAnchor3.innerHTML = "About"
 
-// Title
-const pageTitle = document.createElement('h1')
-pageTitle.innerHTML = 'Find Information About Your Favorite Game!'
+// Page Title
+const pageTitle = document.createElement('h1');
 $(pageTitle).attr("class", "title-h1");
+pageTitle.innerHTML = 'Find Information About Your Favorite Game!'
 game.append(pageTitle);
 
 // Search Bar
-const barForm = document.createElement('form')
-const barInput = document.createElement('input')
-
-const barButton = document.createElement('button')
+const barForm = document.createElement('form');
+const barInput = document.createElement('input');
+const barButton = document.createElement('button');
+// APPENDING FORM TOGETHER AND APPEND TO BODY
+game.append(barForm);
 barForm.append(barInput);
 barForm.append(barButton);
-game.append(barForm);
-barButton.innerHTML = 'Search'
-
-
+// SEARCH BAR ATTRIBUTES
 $(barForm).attr("class", "search-form");
 $(barForm).attr("id", "#form");
 $(barInput).attr("id", "input");
@@ -85,12 +91,15 @@ $(barInput).attr("placeholder", "Find a Game!");
 $(barInput).attr("type", "text");
 $(barButton).attr("id", "button");
 $(barButton).attr("type", "submit");
-$(barButton).attr("class", "nes-btn search-btn")
-
+$(barButton).attr("class", "nes-btn search-btn");
+// SEARCH BAR HTML
+barButton.innerHTML = 'Search'
 
 //  Main Content
 const main = document.createElement('main')
+
 game.append(main);
+
 $(main).attr("class", "main-ctn");
 
 
@@ -106,7 +115,7 @@ barForm.addEventListener("submit", function(event) {
                 main.removeChild(main.lastChild)
             }
         }
-        window.open(`/game.html?${usrGame}`, "blank_")
+        window.open(`/game.html?${usrGame}`, "_self")
 
     }
 });
@@ -122,11 +131,12 @@ function regEx(word) {
 function getTitle(object) {
     object.then(info => {
         const gameName = info.results[0].slug;
+        const titleName = gameName.replace(/-/g, " ");
         const titleInfo = document.createElement('h1');
         $(titleInfo).attr("class", "title-game");
-        titleInfo.innerHTML = gameName
+        titleInfo.innerHTML = titleName
         main.append(titleInfo);
-        getDescription(gameName)
+        getDescription(gameName);
 
 
     });
@@ -167,66 +177,84 @@ function getPlatforms(object) {
 }
 
 function getDescription(title) {
-    console.log(title)
-    const getDescription = get(`https://api.rawg.io/api/games/${title}`)
+
+    const getDescription = get(`https://api.rawg.io/api/games/${title}`);
+
     getDescription.then(info => {
+
         const gameDescription = info.description
         const descriptionDiv = document.createElement('div');
-        $(descriptionDiv).attr("class", "description-ctn")
         const gameInfo = document.createElement('p');
+
+        $(descriptionDiv).attr("class", "description-ctn");
+
         gameInfo.innerHTML = gameDescription;
+
         descriptionDiv.append(gameInfo);
+
         main.append(descriptionDiv);
     });
-    console.log(title)
-    getImage(title)
+
+    getImage(title);
+
 }
 
 function getImage(title) {
     const getDescription = get(`https://api.rawg.io/api/games/${title}`)
-    let gameImages = []
+
+    const gameImages = []
+
     getDescription.then(info => {
+
         const gameImage = info.background_image
+
         gameImages.push(gameImage)
+
         if (info.background_image_addtional !== null) {
             const gameImage2 = info.background_image_additional
             gameImages.push(gameImage2)
         }
-
         const imageDiv = document.createElement('div');
-        $(imageDiv).attr("class", "image-ctn");
-        main.append(imageDiv)
         const imageInfo = document.createElement('img');
-        $(imageInfo).attr("class", "image-game img-thumbnail");
-
         let x = 0
-        imageInfo.src = gameImages[x]
 
+        main.append(imageDiv);
         imageDiv.append(imageInfo)
+
+        $(imageDiv).attr("class", "image-ctn");
+        $(imageInfo).attr("class", "img-thumbnail image-game");
+
+        imageInfo.src = gameImages[x]
 
         function changeImage() {
             if (x == 1) {
                 x = changeImage.length
-
             } else if (x <= 0) {
                 x += 1;
             }
             imageInfo.src = gameImages[x]
         }
-        setInterval(changeImage, 4000)
+        setInterval(changeImage, 4000);
+
     })
-}
+};
 
-
-
-function update(title = 'final fantasy vii remake') {
+$(document).ready(function({ title = 'final fantasy vii remake' }) {
     if (location.search) {
         title = location.search;
     }
     const gameGet = get(`https://api.rawg.io/api/games?search=${title.replace(/\?/g, " ")}`);
     getTitle(gameGet);
     getPlatforms(gameGet);
-};
 
-update();
-// Footer
+
+
+});
+
+const playerShip = document.createElement('div');
+game.append(playerShip);
+$(playerShip).attr("class", "playerShip")
+
+playerShip.addEventListener('click', function() {
+    window.open('index.html')
+})

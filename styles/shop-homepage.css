@@ -1,11 +1,12 @@
+
 html {
-  background: url(../img/animebg.jpg);
-  background-position: top;
-  background-size: contain;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    background: url(../img/animebg.jpg);
+    background-position: top;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 body {
@@ -18,9 +19,9 @@ a:hover {
 }
 
 .centerContent {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .canvas2 {
@@ -34,4 +35,5 @@ a:hover {
   display: flex;
   justify-content: center;
 }
+
 

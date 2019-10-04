@@ -90,6 +90,7 @@ body {
     justify-content: space-around;
 }
 
+
 .dclogo {
     position: bottom;
     display: flex;
@@ -99,10 +100,8 @@ body {
     padding: 5%
 }
 
+
 body,
 a:hover {
-
     cursor: url(http://www.rw-designer.com/cursor-extern.php?id=123594), progress !important;
 }
-
-
