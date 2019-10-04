@@ -56,6 +56,7 @@ function strawHats() {
             //Grabbing relvent information of which to populate in the DOM
 
 
+
             
             const doodle = rubber.backdrop_path
             const photo = rubber.poster_path
@@ -348,6 +349,7 @@ function pirates() {
             
         });
 
+  
     const zoro = get(
         `https://api.themoviedb.org/3/tv/67075-100?api_key=cc42102845a020075536de832b824222`
         );//Mob Psycho 100

@@ -1,6 +1,14 @@
 // SET VARIABLE TO BODY
 const game = document.querySelector('body')
 
+// CREATE CANVAS
+// const canvas = document.createElement('canvas');
+// game.append(canvas);
+// $(canvas).attr("id", "myCanvas");
+// $(canvas).attr("class", "myCanvas");
+
+
+
 // NAVBAR VARIABLES 
 const navBar = document.createElement('nav')
 const navDiv = document.createElement('div')
@@ -15,9 +23,11 @@ const navLinkAnchor1 = document.createElement('a')
 const navLinkAnchor2 = document.createElement('a')
 const navLinkAnchor3 = document.createElement('a')
 
+
 // NAVBAR APPENDING ELEMENTS TO EACH OTHER
 game.append(navBar);
 navBar.append(navDiv);
+navDiv.append(navButton);
 navButton.append(buttonSpan);
 navDiv.append(navLinkDiv);
 navLinkDiv.append(navLinkUL);
@@ -42,30 +52,27 @@ $(buttonSpan).attr("class", "navbar-toggler-icon");
 $(navLinkDiv).attr("class", "collapse navbar-collapse");
 $(navLinkDiv).attr("id", "navbarResponsive");
 $(navLinkUL).attr("class", "navbar-nav ml-auto");
-$(navLinkLI1).attr("class", "nav-item");
+$(navLinkLI1).attr("class", "nav-item active");
 $(navLinkAnchor1).attr("class", "nav-link");
 $(navLinkAnchor1).attr("href", "index.html");
-$(navLinkLI2).attr("class", "nav-item");
+$(navLinkLI2).attr("class", "nav-item active");
 $(navLinkAnchor2).attr("class", "nav-link");
 $(navLinkAnchor2).attr("href", "anime.html");
-$(navLinkLI3).attr("class", "nav-item");
+$(navLinkLI3).attr("class", "nav-item active");
 $(navLinkAnchor3).attr("class", "nav-link");
 $(navLinkAnchor3).attr("href", "/index.html#bottom");
 
 // NAVBAR SET INNER HTML
 navLinkAnchor1.innerHTML = "Home"
 navLinkAnchor2.innerHTML = "Anime"
+
 navLinkAnchor3.innerHTML = "About"
 
 // Page Title
-const pageTitle = document.createElement('h1')
-
-game.append(pageTitle);
-
+const pageTitle = document.createElement('h1');
 $(pageTitle).attr("class", "title-h1");
-
 pageTitle.innerHTML = 'Find Information About Your Favorite Game!'
-
+game.append(pageTitle);
 
 // Search Bar
 const barForm = document.createElement('form');
@@ -108,10 +115,12 @@ barForm.addEventListener("submit", function(event) {
                 main.removeChild(main.lastChild)
             }
         }
-        window.open(`/game.html?${usrGame}`, "blank_")
+        window.open(`/game.html?${usrGame}`, "_self")
 
     }
 });
+
+
 
 function regEx(word) {
     const title = word.replace(/\s/g, "%20");
@@ -122,11 +131,12 @@ function regEx(word) {
 function getTitle(object) {
     object.then(info => {
         const gameName = info.results[0].slug;
+        const titleName = gameName.replace(/-/g, " ");
         const titleInfo = document.createElement('h1');
         $(titleInfo).attr("class", "title-game");
-        titleInfo.innerHTML = gameName
+        titleInfo.innerHTML = titleName
         main.append(titleInfo);
-        getDescription(gameName)
+        getDescription(gameName);
 
 
     });
@@ -212,7 +222,7 @@ function getImage(title) {
         imageDiv.append(imageInfo)
 
         $(imageDiv).attr("class", "image-ctn");
-        $(imageInfo).attr("class", "image-game img-thumbnail");
+        $(imageInfo).attr("class", "img-thumbnail image-game");
 
         imageInfo.src = gameImages[x]
 
@@ -229,13 +239,22 @@ function getImage(title) {
     })
 };
 
-
-
-(function(title = 'final fantasy vii remake') {
+$(document).ready(function({ title = 'final fantasy vii remake' }) {
     if (location.search) {
         title = location.search;
     }
     const gameGet = get(`https://api.rawg.io/api/games?search=${title.replace(/\?/g, " ")}`);
     getTitle(gameGet);
     getPlatforms(gameGet);
-})();
+
+
+
+});
+
+const playerShip = document.createElement('div');
+game.append(playerShip);
+$(playerShip).attr("class", "playerShip")
+
+playerShip.addEventListener('click', function() {
+    window.open('index.html')
+})

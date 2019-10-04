@@ -2,31 +2,19 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content=""> ​
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">​
     <title>Anime</title>
-    <link rel="icon" type="image/png" href="img/animeIcon.png" />
+
+    <link rel="icon" type="image/png" href='img/animeIcon.png'/>
+
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Custom styles for this template -->
     <link href="styles/shop-homepage.css" rel="stylesheet">
-
 </head>
-<style>
-.canvas2
-{object-fit: cover;
-    width:900px;
-    height: 350px;
-}
 
-</style>
 <body>
-
-
-
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
@@ -49,7 +37,18 @@
             </div>
         </div>
     </nav>
-    <!-- Page Content -->
+<!-- Category List -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+            <h1 class="my-4">Animes</h1>
+            <div class="list-group">
+                <a href="#" id="spooky" class="list-group-item">Spooky</a>
+                <a href="#" id="videoGames" class="list-group-item">Video Games</a>
+                <a href="#" id="fresh" class="list-group-item">Fresh</a>
+            </div>
+        </div>
+    <!-- Carousel -->
     <div class="container">
         <div class="row centerContent">
 
@@ -62,6 +61,7 @@
                     <a href="#" id="fresh" class="list-group-item">Fresh To Anime</a>
                 </div>>
             </div>
+
 
 
             <div class="col-lg-9">
@@ -80,9 +80,7 @@
                         <iframe id="embed1"><a href="#"></a></iframe>
                     </div>
                     <div class="carousel-item">
-                        <a id="view">
                         <img id="link1" class="d-block img-fluid canvas2" src="http://placehold.it/900x350" alt="Third slide">
-                        </a>
                     </div>
 
                     </div>
@@ -96,9 +94,9 @@
                     </a>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="col-lg-4 col-md-6 mb-4" >
                         <div class="card h-100">
-                            <figure id="icon1"></figure>
+                            <figure class='imgSize' id="icon1" alt='photo'></figure>
                             <div class="card-body">
                                 <h4 class="card-title">
                                     <a href="#" id="title1"> luffy.name</a>
@@ -116,7 +114,7 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <figure id="icon2"></figure>
+                            <figure class='imgSize' alt='photo' id="icon2"></figure>
                             <div class="card-body">
                                 <h4 class="card-title">
                                     <a href="#" id="title2"> zoro.name</a>
@@ -134,7 +132,7 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <figure id="icon3"></figure>
+                            <figure class='imgSize' alt='photo' id="icon3"></figure>
                             <div class="card-body">
                                 <h4 class="card-title">
                                     <a href="#" id="title3"> nami.name</a>
@@ -152,7 +150,7 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <figure id="icon4"></figure>
+                            <figure class='imgSize' alt='photo' id="icon4"></figure>
                             <div class="card-body">
                                 <h4 class="card-title">
                                     <a href="#" id="title4"> ussop.name</a>
@@ -170,7 +168,7 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <figure id="icon5"></figure>
+                            <figure class='imgSize' alt='photo' id="icon5"></figure>
                             <div class="card-body">
                                 <h4 class="card-title">
                                     <a href="#" id="title5"> sanji.name</a>
@@ -188,7 +186,7 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <figure id="icon6"></figure>
+                            <figure class='imgSize' alt='photo' id="icon6"></figure>
                             <div class="card-body">
                                 <h4 class="card-title">
                                     <a href="#" id="title6"> chopper.name</a>
@@ -207,22 +205,11 @@
             </div>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-        <div class="container">
-            <p class="m-0 text-center text-white">Change Footer</p>
-        </div>
-    </footer>
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="scripts/get.js"></script>
     <script src="scripts/anime.js"></script>
-
-
 </body>
-​
-
 </html>
