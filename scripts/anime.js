@@ -55,6 +55,7 @@ function strawHats() {
         console.log(rubber)
             //Grabbing relvent information of which to populate in the DOM
 
+
             
             const doodle = rubber.backdrop_path
             const photo = rubber.poster_path
@@ -555,6 +556,7 @@ function pirates() {
 
 strawHats();
 categories();
+
 
 //.homepage for target's wesite|.name for target's title|.overview for target's description|.poster_path for target's card image|.backdrop_path for carousel image|.original_language for languages
 
