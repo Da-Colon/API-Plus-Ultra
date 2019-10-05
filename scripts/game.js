@@ -1,12 +1,6 @@
 // SET VARIABLE TO BODY
 const game = document.querySelector('body')
 
-// CREATE CANVAS
-// const canvas = document.createElement('canvas');
-// game.append(canvas);
-// $(canvas).attr("id", "myCanvas");
-// $(canvas).attr("class", "myCanvas");
-
 
 
 // NAVBAR VARIABLES 
@@ -22,10 +16,11 @@ const navLinkLI3 = document.createElement('li')
 const navLinkAnchor1 = document.createElement('a')
 const navLinkAnchor2 = document.createElement('a')
 const navLinkAnchor3 = document.createElement('a')
-
+const playerShipDisable = document.createElement('button')
 
 // NAVBAR APPENDING ELEMENTS TO EACH OTHER
 game.append(navBar);
+navBar.append(playerShipDisable)
 navBar.append(navDiv);
 navDiv.append(navButton);
 navButton.append(buttonSpan);
@@ -61,6 +56,9 @@ $(navLinkAnchor2).attr("href", "anime.html");
 $(navLinkLI3).attr("class", "nav-item active");
 $(navLinkAnchor3).attr("class", "nav-link");
 $(navLinkAnchor3).attr("href", "/index.html#bottom");
+$(playerShipDisable).attr("type", "button");
+$(playerShipDisable).attr("class", "disableButton");
+
 
 // NAVBAR SET INNER HTML
 navLinkAnchor1.innerHTML = "Home"
@@ -257,4 +255,9 @@ $(playerShip).attr("class", "playerShip")
 
 playerShip.addEventListener('click', function() {
     window.open('index.html')
-})
+});
+
+playerShipDisable.addEventListener('click', function() {
+    // $(playerShip).css("background", "unset");
+    $(playerShip).remove()
+});
