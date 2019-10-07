@@ -6,19 +6,12 @@ function categories(){
     const second = document.getElementById('videoGames')
     const third = document.getElementById('fresh')
     
-    //const icon1 = document.getElementById('icon1')
-    // const icon2 = document.getElementById('icon2')
-    // const icon3 = document.getElementById('icon3')
-    // const icon4 = document.getElementById('icon4')
-    // const icon5 = document.getElementById('icon5')
-    //const icon6 = document.getElementById('icon6').removeChild()
-
     
     first.addEventListener('click', function(){
+        //canvas1.removeChild(canvas1.lastChild)
         strawHats()
     });
     second.addEventListener('click', function(){
-        document.getElementsByClassName(imgSize)
         pirates()
     });
     third.addEventListener('click', function(){
@@ -26,7 +19,7 @@ function categories(){
     });
 }
 //Carousel generator
-function car(doodle,videoUrl,piece,stream){
+function car(doodle,videoUrl,piece,stream,twin){
     const canvas = document.getElementById('canvas1');
     const embed = document.getElementById('embed1');
     const link = document.getElementById('link1');
@@ -35,8 +28,8 @@ function car(doodle,videoUrl,piece,stream){
       //Using paring var  variables to populate in webpage 
             //First carousel item "Splash"
             canvas.setAttribute('src', `https://image.tmdb.org/t/p/w300_and_h450_bestv2/${doodle}`);
-            //canvas.setAttribute('src', game)
-            //canvas.setAttribute('target','_blank')
+            canvas.setAttribute('href', twin)
+            canvas.setAttribute('target','_blank')
 
             //Second carousel item "Trailer"
             // embed.setAttribute('src', `https://www.youtube.com/embed/LYUuTF7vLcg`);
@@ -289,14 +282,16 @@ function strawHats() {
             const website = document.getElementById('website6');
             const desk = document.getElementById('description6');
             const lang = document.getElementById('lang6');
-
+            const game = document.getElementById('game')
             //
+            let twin =` game.html?Super Mario World`
             let video = `https://www.youtube.com/embed/Kbb8zPQBmOw`
             let art = `https://occ-0-3432-2433.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABfN2af8twyCldGC7j84xtG3D6cLj4gDBodE4szv_uFwhtEKqFbwF21V9_9WGQElavrQkwIxKBthQ11b_NwYN8rxcStBE.jpg?r=b69`
             let watch = `https://www.netflix.com/title/80095241`
+            
             //
             title.addEventListener('click', function(){
-                car(doodle,video,art,watch);
+                car(doodle,video,art,watch,twin);
             });
             //
             image.setAttribute('src', `https://image.tmdb.org/t/p/w300_and_h450_bestv2/${photo}`);
@@ -307,6 +302,8 @@ function strawHats() {
             website.setAttribute('target', '_blank');
             desk.innerHTML = overview;
             lang.innerHTML = "available languages: " + dubs;
+            
+            
             });
         }
 
