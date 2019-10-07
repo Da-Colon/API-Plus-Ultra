@@ -1,7 +1,7 @@
 
 html {
   background: url(../img/animebg.jpg);
-  opacity: 0.9;
+  /* opacity: 0.9; */
   background-position: top;
   background-size: contain;
   display: flex;
@@ -34,6 +34,7 @@ a:hover {
 }
 
 .imgSize {
+  opacity: unset;
   max-width: 100%;
   display: flex;
   justify-content: center;
