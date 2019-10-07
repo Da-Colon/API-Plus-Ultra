@@ -43,7 +43,7 @@ function car(doodle, videoUrl, piece, stream, twin) {
     //Third carousel item "Streaming page link"
     link.setAttribute('src', piece)
     view.setAttribute('href', stream);
-    // view.setAttribute('target',  '_blank');
+    view.setAttribute('target', '_blank');
 
 
 }
