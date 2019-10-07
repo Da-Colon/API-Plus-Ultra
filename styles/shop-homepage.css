@@ -1,16 +1,19 @@
 
 html {
-    background: url(../img/animebg.jpg);
-    background-position: top;
-    background-size: contain;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  background: url(../img/animebg.jpg);
+  opacity: 0.9;
+  background-position: top;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 body {
+  
   padding-top: 60px;
+
 }
 
 body,
@@ -19,9 +22,9 @@ a:hover {
 }
 
 .centerContent {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .canvas2 {
