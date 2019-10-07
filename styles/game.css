@@ -209,6 +209,16 @@ body {
         padding: 2rem;
         padding-bottom: 200px;
     }
+    .disableButton {
+        position: absolute;
+        right: 40px;
+    }
+}
+
+.disableButton {
+    width: auto;
+    height: 25px;
+    background-color: rgb(155, 154, 154);
 }
 
 .playerShip {
@@ -222,7 +232,6 @@ body {
     animation-timing-function: linear;
     animation-delay: 30s;
     animation-iteration-count: infinite;
-    /* animation-direction: alternate; */
     animation-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
     transform: rotate(45deg);
 }
