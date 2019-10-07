@@ -63,8 +63,8 @@ $(playerShipDisable).attr("class", "disableButton");
 // NAVBAR SET INNER HTML
 navLinkAnchor1.innerHTML = "Home"
 navLinkAnchor2.innerHTML = "Anime"
-
 navLinkAnchor3.innerHTML = "About"
+playerShipDisable.innerHTML = "Disable Ship"
 
 // Page Title
 const pageTitle = document.createElement('h1');
@@ -258,6 +258,5 @@ playerShip.addEventListener('click', function() {
 });
 
 playerShipDisable.addEventListener('click', function() {
-    // $(playerShip).css("background", "unset");
     $(playerShip).remove()
 });

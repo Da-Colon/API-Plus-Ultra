@@ -216,8 +216,9 @@ body {
 }
 
 .disableButton {
-    width: 100px;
-    height: 20px;
+    width: auto;
+    height: 25px;
+    background-color: rgb(155, 154, 154);
 }
 
 .playerShip {
