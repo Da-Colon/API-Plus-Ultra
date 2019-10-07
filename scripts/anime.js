@@ -5,21 +5,45 @@ function categories(){
     const first = document.getElementById('spooky')
     const second = document.getElementById('videoGames')
     const third = document.getElementById('fresh')
+
+    const twin1 = document.getElementById('icon1');
+    const twin2 = document.getElementById('icon2');
+    const twin3 = document.getElementById('icon3');
+    const twin4 = document.getElementById('icon4');
+    const twin5 = document.getElementById('icon5');
+    const twin6 = document.getElementById('icon6');
     
     
     first.addEventListener('click', function(){
-        //canvas1.removeChild(canvas1.lastChild)
+        twin1.removeChild(twin1.lastChild)
+        twin2.removeChild(twin2.lastChild)
+        twin3.removeChild(twin3.lastChild)
+        twin4.removeChild(twin4.lastChild)
+        twin5.removeChild(twin5.lastChild)
+        twin6.removeChild(twin6.lastChild)
         strawHats()
     });
     second.addEventListener('click', function(){
+        twin1.removeChild(twin1.lastChild)
+        twin2.removeChild(twin2.lastChild)
+        twin3.removeChild(twin3.lastChild)
+        twin4.removeChild(twin4.lastChild)
+        twin5.removeChild(twin5.lastChild)
+        twin6.removeChild(twin6.lastChild)
         pirates()
     });
     third.addEventListener('click', function(){
+        twin1.removeChild(twin1.lastChild)
+        twin2.removeChild(twin2.lastChild)
+        twin3.removeChild(twin3.lastChild)
+        twin4.removeChild(twin4.lastChild)
+        twin5.removeChild(twin5.lastChild)
+        twin6.removeChild(twin6.lastChild)
         devilFruit()
     });
 }
 //Carousel generator
-function car(doodle,videoUrl,piece,stream,twin){
+function car(doodle,videoUrl,piece,stream){
     const canvas = document.getElementById('canvas1');
     const embed = document.getElementById('embed1');
     const link = document.getElementById('link1');
@@ -28,8 +52,8 @@ function car(doodle,videoUrl,piece,stream,twin){
       //Using paring var  variables to populate in webpage 
             //First carousel item "Splash"
             canvas.setAttribute('src', `https://image.tmdb.org/t/p/w300_and_h450_bestv2/${doodle}`);
-            canvas.setAttribute('href', twin)
-            canvas.setAttribute('target','_blank')
+            //canvas.setAttribute('href', twin)
+            //canvas.setAttribute('target','_blank')
 
             //Second carousel item "Trailer"
             // embed.setAttribute('src', `https://www.youtube.com/embed/LYUuTF7vLcg`);
@@ -284,14 +308,13 @@ function strawHats() {
             const lang = document.getElementById('lang6');
             const game = document.getElementById('game')
             //
-            let twin =` game.html?Super Mario World`
             let video = `https://www.youtube.com/embed/Kbb8zPQBmOw`
             let art = `https://occ-0-3432-2433.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABfN2af8twyCldGC7j84xtG3D6cLj4gDBodE4szv_uFwhtEKqFbwF21V9_9WGQElavrQkwIxKBthQ11b_NwYN8rxcStBE.jpg?r=b69`
             let watch = `https://www.netflix.com/title/80095241`
             
             //
             title.addEventListener('click', function(){
-                car(doodle,video,art,watch,twin);
+                car(doodle,video,art,watch);
             });
             //
             image.setAttribute('src', `https://image.tmdb.org/t/p/w300_and_h450_bestv2/${photo}`);
