@@ -254,7 +254,7 @@ game.append(playerShip);
 $(playerShip).attr("class", "playerShip")
 
 playerShip.addEventListener('click', function() {
-    window.open('index.html')
+    window.open('moonset.html')
 });
 
 playerShipDisable.addEventListener('click', function() {
